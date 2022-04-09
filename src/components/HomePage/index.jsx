@@ -4,7 +4,7 @@ import Notes from "../Notes";
 import Search from "../Search";
 import Title from "../TittlePage";
 import "./style.css";
-import { Button } from "@mui/material";
+
 
 const HomePage = () => {
   const [notes, setNotes] = useState([
@@ -33,10 +33,7 @@ const HomePage = () => {
         <Title title="VUTTR" subtitle="Very Useful Tools to Remember" />
         <div className="card-actions">
           <Search />
-          {
-            /* <ButtonAdd />*/
-          }
-        <Button variant="contained" color="success">Add Tool</Button>
+            <ButtonAdd />
         </div>
           {notes.map((notes) => (
             <Notes
