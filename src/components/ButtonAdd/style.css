@@ -1,0 +1,12 @@
+#addButton{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 20px;
+    background: #fff;
+    border: #000 3px solid;
+    box-shadow: 3px 3px #000000;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-weight: 600;
+ }
