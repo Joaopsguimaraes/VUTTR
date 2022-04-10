@@ -19,12 +19,13 @@ const RemoveTool = () => {
   };
 
   const buttonStyle = {
-    fontWeight: "600"
+    fontWeight: "700",
+    color:"#000"
   };
 
   return (
     <div>
-      <Button sx={buttonStyle} color="error" onClick={handleClickOpen}>
+      <Button sx={buttonStyle} onClick={handleClickOpen}>
         <VscDiffRemoved />
         Remove
       </Button>

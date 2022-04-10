@@ -21,8 +21,13 @@ const textFieldStyle = {
 };
 
 const buttonAddStyle = {
-  padding: "5 15px",
+  padding: "0 20px",
+  color: "#000",
+  background: "#fff",
+  border: "3px solid #000",
+  boxShadow: "15"
 };
+
 
 const ButtonAdd = () => {
   const [open, setOpen] = React.useState(false);
@@ -35,21 +40,15 @@ const ButtonAdd = () => {
     console.log(linkTool.target.value);
   };
   const newDescriptionTool = (descriptionTool) => {
-    console.log (descriptionTool.target.value);
+    console.log(descriptionTool.target.value);
   };
-  const newTagsTool= (tagsTool) => {
-    console.log(tagsTool.target.value)
-  }
-  
+  const newTagsTool = (tagsTool) => {
+    console.log(tagsTool.target.value);
+  };
 
   return (
     <div>
-      <Button
-        sx={buttonAddStyle}
-        variant="contained"
-        color="success"
-        onClick={handleOpen}
-      >
+      <Button sx={buttonAddStyle} onClick={handleOpen}>
         <FiPlus />
         Add
       </Button>
@@ -89,12 +88,10 @@ const ButtonAdd = () => {
           <Typography variant="subtitle1" component="div">
             Tool Tags
             <br />
-            <TextField sx={textFieldStyle} onChange={newTagsTool}/>
+            <TextField sx={textFieldStyle} onChange={newTagsTool} />
           </Typography>
           <br />
-          <Button variant="contained" color="success">
-            Add Tool
-          </Button>
+            <Button sx={buttonAddStyle}>Add Tool</Button>
         </Box>
       </Modal>
     </div>
