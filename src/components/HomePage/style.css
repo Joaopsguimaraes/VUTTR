@@ -8,3 +8,16 @@
     align-items: center;
     justify-content: space-between;
 }
+
+@media (max-width:900px) {
+    .container{
+        width: 90%;
+    }
+    .card-actions{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+}
