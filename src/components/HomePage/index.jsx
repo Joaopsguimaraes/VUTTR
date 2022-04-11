@@ -1,52 +1,59 @@
 import React, { useState } from "react";
 import ButtonAdd from "../ButtonAdd";
-import Notes from "../Notes";
+import Tool from "../Tool";
 import Search from "../Search";
-import Title from "../TittlePage";
+import Tittle from "../TittlePage";
 import "./style.css";
 
 const HomePage = () => {
-  const [notes, setNotes] = useState([
+  const [tool, setTool] = useState([
     {
-      nameCard: "Notion",
+      name: "Notion",
       link: "https://www.notion.so/",
-      descriptionCard:
+      description:
         "All in one tool to organize teams and ideas. Write, plan, collaborate, and get organized.",
-      tagsCard: "#notes #organization #planning #collaboration #writting",
+      tags: "#notes #organization #planning #collaboration #writting",
     },
     {
-      nameCard: "React",
+      name: "React",
       link:"",
-      descriptionCard:
+      description:
         "All in one tool to organize teams and ideas. Write, plan, collaborate, and get organized.",
       tagsCard: "#notes #organization #planning #collaboration #writting",
     },
     {
-      nameCard: "Vue",
+      name: "Vue",
       link:"", 
-      descriptionCard:
+      description:
         "All in one tool to organize teams and ideas. Write, plan, collaborate, and get organized.",
-      tagsCard: "#notes #organization #planning #collaboration #writting",
+      tags: "#notes #organization #planning #collaboration #writting",
     },
   ]);
+
+  const addNewTool = (newTool) =>{
+    setTool([...tool, newTool])
+  }
+
   return (
     <>
       <div className="container">
-        <Title title="VUTTR" subtitle="Very Useful Tools to Remember" />
+        <Tittle title="VUTTR" subtitle="Very Useful Tools to Remember" />
         <div className="card-actions">
           <Search />
           <ButtonAdd />
         </div>
         <ul>
-          {notes.map((notes, index) => (
+          {tool.map((tool, index) => (
             <li key={index}>
-              <Notes
-                nameCard={notes.nameCard}
-                descriptionCard={notes.descriptionCard}
-                tagsCard={notes.tagsCard}
+              <Tool
+                name={tool.name}
+                link={tool.link}
+                description={tool.description}
+                tags={tool.tags}
               />
             </li>
           ))}
+          <ButtonAdd addNewTool = {addNewTool}/>
         </ul>
       </div>
     </>

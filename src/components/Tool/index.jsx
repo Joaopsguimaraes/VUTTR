@@ -1,20 +1,20 @@
 import React from "react";
 import "./style.css";
-import RemoveTool from "../RemoveNote";
+import RemoveTool from "../RemoveTool";
 
-const Notes = (props) => {
+const Tool = (props) => {
   return (
     <div className="Notes card-notes">
       <div className="title-note">
         <a href={props.link} target="blank">
-          {props.nameCard}
+          {props.name}
         </a>
         <RemoveTool />
       </div>
-      <p>{props.descriptionCard}</p>
-      <p id="tags">{props.tagsCard}</p>
+      <p>{props.description}</p>
+      <p id="tags">{props.tags}</p>
     </div>
   );
 };
 
-export default Notes;
+export default Tool;

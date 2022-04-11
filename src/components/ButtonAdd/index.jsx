@@ -31,39 +31,43 @@ const buttonAddStyle = {
   border: "3px solid #000",
   boxShadow: "15",
 };
+const buttonAddTool = {
+  width: "20%",
+  padding: "0",
+  color: "#000",
+  background: "#fff",
+  border: "3px solid #000",
+  boxShadow: "15",
+  alignSelf: "flex-end",
+};
 
-const ButtonAdd = () => {
+const ButtonAdd = (props) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const [nameTool, setNameTool] = useState();
-  const [linkTool, setLinkTool] = useState();
-  const [descriptionTool, setDescriptionTool] = useState();
-  const [tagsTool, setTagsTool] = useState();
 
-  function newNameTool(event) {
-    event.stopPropagation();
+  const [nameTool, setNameTool] = useState("");
+  const [linkTool, setLinkTool] = useState("");
+  const [descriptionTool, setDescriptionTool] = useState("");
+  const [tagsTool, setTagsTool] = useState("");
+
+  const newNameTool = (event) => {
     setNameTool(event.target.value);
-  }
-  function newLinkTool(event) {
-    event.stopPropagation();
+  };
+  const newLinkTool = (event) => {
     setLinkTool(event.target.value);
-  }
-  function newDescriptionTool(event) {
-    event.stopPropagation();
+  };
+  const newDescriptionTool = (event) => {
     setDescriptionTool(event.target.value);
-  }
-  function newTagsTool(event) {
-    event.stopPropagation();
+  };
+  const newTagsTool = (event) => {
     setTagsTool(event.target.value);
-  }
-  function createTool(event) {
+  };
+
+  const createTool = (event) => {
+    props.addNewTool({name: nameTool, link:linkTool, description:descriptionTool, tags:tagsTool });
     event.preventDefault();
-    event.stopPropagation();
-    window.alert(
-      `Titulo da nota: ${nameTool}, link: ${linkTool}, descricao: ${descriptionTool} tags: ${tagsTool}`
-    );
-  }
+  };
 
   return (
     <div>
@@ -77,29 +81,40 @@ const ButtonAdd = () => {
             <FiPlus />
             Add new tool
           </Typography>
-          <Typography variant="subtitle1">
-            Tool Name
-            <TextField sx={textFieldStyle} onChange={newNameTool} />
-          </Typography>
+          <Typography variant="subtitle1">Tool Name</Typography>
+          <TextField
+            sx={textFieldStyle}
+            value={nameTool}
+            onChange={newNameTool}
+          />
           <Typography variant="subtitle1" component="div">
             Tool link
-            <TextField sx={textFieldStyle} onChange={newLinkTool} />
           </Typography>
+          <TextField
+            sx={textFieldStyle}
+            value={linkTool}
+            onChange={newLinkTool}
+          />
           <Typography variant="subtitle1" component="div">
             Tool description
-            <TextField
-              sx={textFieldStyle}
-              id="outlined-textarea"
-              multiline
-              rows={4}
-              onChange={newDescriptionTool}
-            />
           </Typography>
+          <TextField
+            sx={textFieldStyle}
+            id="outlined-textarea"
+            multiline
+            rows={4}
+            value={descriptionTool}
+            onChange={newDescriptionTool}
+          />
           <Typography variant="subtitle1" component="div">
             Tool Tags
-            <TextField sx={textFieldStyle} onChange={newTagsTool} />
           </Typography>
-          <Button sx={buttonAddStyle} type="submit">
+          <TextField
+            sx={textFieldStyle}
+            value={tagsTool}
+            onChange={newTagsTool}
+          />
+          <Button sx={buttonAddTool} type="submit">
             Add Tool
           </Button>
         </Box>
