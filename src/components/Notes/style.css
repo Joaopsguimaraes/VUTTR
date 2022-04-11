@@ -17,6 +17,7 @@
     text-decoration: underline;
     font-weight: normal;
     color: #3777d8;
+    cursor: pointer;
 }
 .Notes p{
     font-size: 1rem;

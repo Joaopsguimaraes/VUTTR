@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { Button, Box, Typography, Modal, TextField } from "@mui/material";
 import { FiPlus } from "react-icons/fi";
 
@@ -6,6 +7,9 @@ const style = {
   position: "absolute",
   top: "50%",
   left: "50%",
+  display: "flex",
+  flexDirection: "column",
+  gap: "10px",
   transform: "translate(-50%, -50%)",
   width: "40%",
   bgcolor: "background.paper",
@@ -21,30 +25,45 @@ const textFieldStyle = {
 };
 
 const buttonAddStyle = {
-  padding: "0 20px",
+  padding: "0 10px",
   color: "#000",
   background: "#fff",
   border: "3px solid #000",
-  boxShadow: "15"
+  boxShadow: "15",
 };
 
-
 const ButtonAdd = () => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const newNameTool = (nameTool) => {
-    console.log(nameTool.target.value);
-  };
-  const newLinkTool = (linkTool) => {
-    console.log(linkTool.target.value);
-  };
-  const newDescriptionTool = (descriptionTool) => {
-    console.log(descriptionTool.target.value);
-  };
-  const newTagsTool = (tagsTool) => {
-    console.log(tagsTool.target.value);
-  };
+  const [nameTool, setNameTool] = useState();
+  const [linkTool, setLinkTool] = useState();
+  const [descriptionTool, setDescriptionTool] = useState();
+  const [tagsTool, setTagsTool] = useState();
+
+  function newNameTool(event) {
+    event.stopPropagation();
+    setNameTool(event.target.value);
+  }
+  function newLinkTool(event) {
+    event.stopPropagation();
+    setLinkTool(event.target.value);
+  }
+  function newDescriptionTool(event) {
+    event.stopPropagation();
+    setDescriptionTool(event.target.value);
+  }
+  function newTagsTool(event) {
+    event.stopPropagation();
+    setTagsTool(event.target.value);
+  }
+  function createTool(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    window.alert(
+      `Titulo da nota: ${nameTool}, link: ${linkTool}, descricao: ${descriptionTool} tags: ${tagsTool}`
+    );
+  }
 
   return (
     <div>
@@ -52,31 +71,22 @@ const ButtonAdd = () => {
         <FiPlus />
         Add
       </Button>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
+      <Modal open={open} onClose={handleClose}>
+        <Box sx={style} component="form" onSubmit={createTool}>
           <Typography variant="h6" component="h2">
             <FiPlus />
             Add new tool
           </Typography>
-          <br />
           <Typography variant="subtitle1">
             Tool Name
-            <br />
             <TextField sx={textFieldStyle} onChange={newNameTool} />
           </Typography>
           <Typography variant="subtitle1" component="div">
             Tool link
-            <br />
             <TextField sx={textFieldStyle} onChange={newLinkTool} />
           </Typography>
           <Typography variant="subtitle1" component="div">
             Tool description
-            <br />
             <TextField
               sx={textFieldStyle}
               id="outlined-textarea"
@@ -87,11 +97,11 @@ const ButtonAdd = () => {
           </Typography>
           <Typography variant="subtitle1" component="div">
             Tool Tags
-            <br />
             <TextField sx={textFieldStyle} onChange={newTagsTool} />
           </Typography>
-          <br />
-            <Button sx={buttonAddStyle}>Add Tool</Button>
+          <Button sx={buttonAddStyle} type="submit">
+            Add Tool
+          </Button>
         </Box>
       </Modal>
     </div>
