@@ -19,7 +19,7 @@ const HomePage = () => {
       link:"",
       description:
         "All in one tool to organize teams and ideas. Write, plan, collaborate, and get organized.",
-      tagsCard: "#notes #organization #planning #collaboration #writting",
+      tags: "#notes #organization #planning #collaboration #writting",
     },
     {
       name: "Vue",
