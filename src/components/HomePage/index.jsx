@@ -40,7 +40,7 @@ const HomePage = () => {
         <Tittle title="VUTTR" subtitle="Very Useful Tools to Remember" />
         <div className="card-actions">
           <Search />
-          <ButtonAdd />
+          <ButtonAdd addNewTool = {addNewTool} />
         </div>
         <ul>
           {tool.map((tool, index) => (
@@ -53,7 +53,6 @@ const HomePage = () => {
               />
             </li>
           ))}
-          <ButtonAdd addNewTool = {addNewTool}/>
         </ul>
       </div>
     </>
