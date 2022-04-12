@@ -1,11 +1,11 @@
 import React from 'react';
 import "./style.css"
 
-const Tittle = (props) => {
+const Tittle = () => {
     return(
         <div className='Title-page'>
-            <h1>{props.title}</h1>
-            <h2>{props.subtitle}</h2>
+            <h1>VUTTR</h1>
+            <h2>Very Useful Tools to Remember</h2>
         </div>
     )
 }

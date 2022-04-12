@@ -4,48 +4,25 @@ import Tool from "../Tool";
 import Search from "../Search";
 import Tittle from "../TittlePage";
 import "./style.css";
+import { useTool } from "../../contexts/ToolContext";
 
 const HomePage = () => {
-  const [tool, setTool] = useState([
-    {
-      name: "Notion",
-      link: "https://www.notion.so/",
-      description:
-        "All in one tool to organize teams and ideas. Write, plan, collaborate, and get organized.",
-      tags: "#notes #organization #planning #collaboration #writting",
-    },
-    {
-      name: "React",
-      link:"",
-      description:
-        "All in one tool to organize teams and ideas. Write, plan, collaborate, and get organized.",
-      tags: "#notes #organization #planning #collaboration #writting",
-    },
-    {
-      name: "Vue",
-      link:"", 
-      description:
-        "All in one tool to organize teams and ideas. Write, plan, collaborate, and get organized.",
-      tags: "#notes #organization #planning #collaboration #writting",
-    },
-  ]);
 
-  const addNewTool = (newTool) =>{
-    setTool([...tool, newTool])
-  }
+  const {toolData} = useTool();
 
   return (
     <>
       <div className="container">
-        <Tittle title="VUTTR" subtitle="Very Useful Tools to Remember" />
+        <Tittle />
         <div className="card-actions">
           <Search />
-          <ButtonAdd addNewTool = {addNewTool} />
+          <ButtonAdd />
         </div>
         <ul>
-          {tool.map((tool, index) => (
+          {toolData.map((tool, index) => (
             <li key={index}>
               <Tool
+                id={tool.id}
                 name={tool.name}
                 link={tool.link}
                 description={tool.description}

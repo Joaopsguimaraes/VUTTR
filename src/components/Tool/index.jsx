@@ -9,7 +9,7 @@ const Tool = (props) => {
         <a href={props.link} target="blank">
           {props.name}
         </a>
-        <RemoveTool />
+        <RemoveTool id={props.id}/>
       </div>
       <p>{props.description}</p>
       <p id="tags">{props.tags}</p>
