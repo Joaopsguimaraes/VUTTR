@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import ButtonAdd from "../ButtonAdd";
 import Tool from "../Tool";
 import Search from "../Search";
@@ -7,9 +7,7 @@ import "./style.css";
 import { useTool } from "../../contexts/ToolContext";
 
 const HomePage = () => {
-
-  const {toolData} = useTool();
-
+  const { toolData } = useTool();
   return (
     <>
       <div className="container">

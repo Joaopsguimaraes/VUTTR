@@ -1,13 +1,13 @@
 import HomePage from "./components/HomePage";
 import { ToolProvider } from "./contexts/ToolContext";
-import "./App.css"
+import "./App.css";
 
 const App = () => {
-  return(
+  return (
     <ToolProvider>
-      <HomePage/>
+      <HomePage />
     </ToolProvider>
-  )
-}
+  );
+};
 
 export default App;

@@ -46,12 +46,12 @@ const ButtonAdd = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(!open);
 
-  const [nameTool, setNameTool] = useState('');
-  const [linkTool, setLinkTool] = useState('');
-  const [descriptionTool, setDescriptionTool] = useState('');
-  const [tagsTool, setTagsTool] = useState('');
+  const [nameTool, setNameTool] = useState("");
+  const [linkTool, setLinkTool] = useState("");
+  const [descriptionTool, setDescriptionTool] = useState("");
+  const [tagsTool, setTagsTool] = useState("");
 
-  const { addNewTool} = useTool();
+  const { addNewTool } = useTool();
 
   const newNameTool = (event) => setNameTool(event.target.value);
   const newLinkTool = (event) => setLinkTool(event.target.value);
@@ -59,13 +59,18 @@ const ButtonAdd = () => {
   const newTagsTool = (event) => setTagsTool(event.target.value);
 
   const createTool = (event) => {
-    addNewTool({name: nameTool, link:linkTool, description:descriptionTool, tags:tagsTool });
+    addNewTool({
+      name: nameTool,
+      link: linkTool,
+      description: descriptionTool,
+      tags: tagsTool,
+    });
     event.preventDefault();
     handleOpen();
-    setNameTool('');
-    setLinkTool('');
-    setDescriptionTool('');
-    setTagsTool('');
+    setNameTool("");
+    setLinkTool("");
+    setDescriptionTool("");
+    setTagsTool("");
   };
 
   return (
