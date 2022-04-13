@@ -40,8 +40,6 @@ Os seguintes itens **não são obrigatórios**, mas darão mais valor ao seu tra
 
 ## Requisitos
 
-Visite: https://www.notion.so/Dev-Front-End-7e048c1d54274a15b26e50f2a4d52d6c
-
 
 ## Instruções para rodar
 
