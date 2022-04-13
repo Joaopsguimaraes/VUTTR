@@ -1,6 +1,6 @@
-# DESAFIO FRONT END KINGSPAN
+# DESAFIO FRONT-END KINGSPAN
 
-## PROPOSTA
+## Proposta
 
 Sua tarefa é construir um front-end para a aplicação VUTTR (Very Useful Tools to Remember). A aplicação é um simples repositório para gerenciar ferramentas com seus respectivos nomes, links, descrições e tags. Utilize um repositório Git (público, de preferência) para versionamento e disponibilização do código.
 
@@ -23,7 +23,6 @@ Queremos avaliar sua capacidade de desenvolver e documentar um front-end para um
 
 ## Bônus
 
-
 Os seguintes itens **não são obrigatórios**, mas darão mais valor ao seu trabalho (os em negrito são mais significativos para nós).
 
 - [ ]  Testes de front-end;
@@ -40,6 +39,7 @@ Os seguintes itens **não são obrigatórios**, mas darão mais valor ao seu tra
 
 ## Requisitos
 
+https://www.notion.so/joaovpsguimaraes/Desafio-Front-End-Kingspan-Isoeste-d8d59b7fd4ec44be92712729b83a1110
 
 ## Instruções para rodar
 
@@ -47,12 +47,12 @@ Os seguintes itens **não são obrigatórios**, mas darão mais valor ao seu tra
 2. Execute `yarn dev` ou `npm run dev` para o projeto rodar.
 3. A aplicação vai rodar em: `http://localhost:3000/`
 
-### Ferramentas utilizadas
+## Ferramentas utilizadas
 
-1. Vite:
+1. Vite: O create react app ja vem com toda parte de webpack, babel, eslint e etc. Pois os browsers não conseguiam entender as importações de arquivos javascript. Porem a um tempo a grande maioria dos browsers ja suportam o ESmodules, ou seja já consegue fazer importação de arquivos javascript de maneira nativa. Com isso utiliza soluções como o Vite e Snowpack para fazer o restante, e ficando mais perfomatico, mais simples criar um projeto e mais rapido.
 
-2. Material UI:
+2. Material UI: Para algumas costumizações foi utilizado o Material UI, como o modal, form, inputs, estilização, titulos entre outros. Que otimizam a criação do projeto utilizando a ferramenta. Assim como facilidade na customização, manutenção e propriedades forneceidos pela MUI.
 
-3. React Icons:
+3. React Icons: Como o Projeto possui alguns icones, foi utilizado o React-icons, pois sua diversidade de icones para utilizar em projetos é excelente, devido a sua variedade de components e facilidade na utilização do projeto.
 
-4. UUID: 
+4. UUID: Para criação da ID das tools foi utilizado o uuid, também devido a facilidade o uuidv4 gera um identificador unico universal para as tools inseridas pelo usuario. Assim facilitando a criação do codigo para remove tool e add tool.
